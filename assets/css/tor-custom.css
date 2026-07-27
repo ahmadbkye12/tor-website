@@ -1,0 +1,134 @@
+/* =====================================================================
+   TOR ENERJİ TEKNOLOJİLERİ – EKOS
+   Custom brand layer (loaded last so it overrides template defaults)
+   Brand palette: TOR Orange (--theme-color) + TOR Black (--secondary-color)
+   ===================================================================== */
+
+:root{
+  --tor-orange: #FF6A00;
+  --tor-orange-deep: #E85D04;
+  --tor-black: #0A0A0A;
+}
+
+/* ---------- Brand logo images (installed TOR PNGs) ----------
+   Header sits on the light banner + white sticky bar -> orange logo (tor-logo.png)
+   Mobile menu + index's dark footer are dark          -> white logo (tor-logo-white.png)
+   Light footers (style-seven / style-eight) keep the orange logo. */
+.main-header .logo-box img{
+  height:46px;
+  width:auto;
+  max-width:210px;
+}
+
+/* index.html dark footer (small copyright bar) */
+.main-footer .footer-logo img{
+  height:40px;
+  width:auto;
+}
+
+/* about / service / portfolio -> footer-style-eight bottom bar (light) */
+.footer-style-eight .footer-bottom .logo-box img{
+  height:40px;
+  width:auto;
+}
+
+/* blog / contact -> footer-style-seven logo widget (light, larger) */
+.footer-style-seven .logo-widget .footer-logo img{
+  max-width:210px;
+  height:auto;
+}
+
+/* mobile slide-in menu (dark background) */
+.mobile-menu .nav-logo img{
+  max-width:180px;
+  height:auto;
+}
+
+/* ---------- "%30 tasarruf garantisi" badge ---------- */
+.tor-badge{
+  display:inline-flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  gap:2px;
+  background: var(--theme-color);
+  color:#fff;
+  border-radius:50%;
+  width:150px;
+  height:150px;
+  padding:14px;
+  font-family:var(--title-font);
+  line-height:1.1;
+  box-shadow:0 12px 30px rgba(255,106,0,.35);
+  border:3px solid #fff;
+}
+.tor-badge .big{ font-size:40px; font-weight:800; }
+.tor-badge .small{ font-size:12px; font-weight:600; text-transform:uppercase; letter-spacing:.5px; }
+
+/* ---------- Generic list of ISO/CE certifications ---------- */
+.tor-cert-list{ display:flex; flex-wrap:wrap; gap:10px; margin:0; padding:0; list-style:none; }
+.tor-cert-list li{
+  border:1px solid rgba(0,0,0,.12);
+  border-radius:8px;
+  padding:8px 16px;
+  font-weight:600;
+  font-family:var(--title-font);
+  color:var(--secondary-color);
+  background:#fff;
+}
+.dark_bg .tor-cert-list li{ background:rgba(255,255,255,.05); color:#fff; border-color:rgba(255,255,255,.15); }
+
+/* ---------- Spec table (technical specifications) ---------- */
+.tor-spec-table{ width:100%; border-collapse:collapse; font-family:var(--text-font); }
+.tor-spec-table th,
+.tor-spec-table td{ padding:14px 18px; border-bottom:1px solid rgba(0,0,0,.08); text-align:left; }
+.tor-spec-table th{ width:45%; font-weight:700; color:var(--secondary-color); font-family:var(--title-font); }
+.tor-spec-table tr:hover{ background:rgba(255,106,0,.04); }
+.dark_bg .tor-spec-table th,
+.dark_bg .tor-spec-table td{ border-color:rgba(255,255,255,.12); color:rgba(255,255,255,.85); }
+.dark_bg .tor-spec-table th{ color:#fff; }
+
+/* ---------- Sector / "Nerede Kullanılır" chips ---------- */
+.tor-sector-list{ display:flex; flex-wrap:wrap; gap:12px; margin:0; padding:0; list-style:none; }
+.tor-sector-list li{
+  display:flex; align-items:center; gap:8px;
+  background:#fff;
+  border:1px solid rgba(0,0,0,.10);
+  border-radius:50px;
+  padding:12px 22px;
+  font-weight:600;
+  font-family:var(--title-font);
+  color:var(--secondary-color);
+  transition:.3s ease;
+}
+.tor-sector-list li:hover{ background:var(--theme-color); color:#fff; border-color:var(--theme-color); }
+.dark_bg .tor-sector-list li{ background:rgba(255,255,255,.05); color:#fff; border-color:rgba(255,255,255,.15); }
+
+/* small helper */
+.tor-orange-text{ color:var(--theme-color) !important; }
+
+/* ---------- Contact info cards ---------- */
+.tor-contact-row{ display:flex; flex-wrap:wrap; gap:24px; margin:0 0 70px; padding:0; list-style:none; }
+.tor-contact-row li{
+  flex:1 1 220px;
+  background:#fff;
+  border:1px solid rgba(0,0,0,.08);
+  border-radius:16px;
+  padding:32px 26px;
+  text-align:center;
+  transition:.3s ease;
+}
+.tor-contact-row li:hover{ transform:translateY(-6px); box-shadow:0 20px 40px rgba(0,0,0,.08); }
+.tor-contact-row .ic{
+  width:62px; height:62px; margin:0 auto 18px;
+  display:flex; align-items:center; justify-content:center;
+  border-radius:50%;
+  background:var(--theme-color); color:#fff; font-size:24px;
+}
+.tor-contact-row span{ display:block; font-family:var(--title-font); font-weight:600; color:var(--secondary-color); margin-bottom:6px; }
+.tor-contact-row a,
+.tor-contact-row p{ color:var(--text-color); font-size:16px; margin:0; }
+.tor-contact-row a:hover{ color:var(--theme-color); }
+.dark_bg .tor-contact-row li{ background:rgba(255,255,255,.05); border-color:rgba(255,255,255,.12); }
+.dark_bg .tor-contact-row span{ color:#fff; }
