@@ -559,6 +559,43 @@
   .tor-section{ padding:70px 0px; }
 }
 
+/* =====================================================================
+   SECTOR MARQUEE (.clients-list.tor-sector-marquee)
+   The template's clients rows were stock brand logos (Microsoft, Instagram,
+   Hurra…). They now carry TOR's sector words as text. The section background
+   is #141414, so the words are white and the separator gap is tightened
+   because text items are much narrower than the original logo images.
+   ===================================================================== */
+.tor-sector-marquee li{
+  margin-right:120px;
+}
+.tor-sector-marquee li:before{
+  right:-70px;
+}
+.tor-sector-marquee li span{
+  display:inline-block;
+  font-family:var(--title-font);
+  font-size:34px;
+  line-height:46px;
+  font-weight:600;
+  color:#fff;
+  white-space:nowrap;
+  transition:.3s ease;
+}
+.tor-sector-marquee li:hover span{
+  color:var(--theme-color);
+}
+@media only screen and (max-width:991px){
+  .tor-sector-marquee li{ margin-right:80px; }
+  .tor-sector-marquee li:before{ right:-50px; }
+  .tor-sector-marquee li span{ font-size:26px; line-height:36px; }
+}
+@media only screen and (max-width:575px){
+  .tor-sector-marquee li{ margin-right:60px; }
+  .tor-sector-marquee li:before{ right:-40px; }
+  .tor-sector-marquee li span{ font-size:22px; line-height:32px; }
+}
+
 /* ---------- 7-item main menu ----------
    The template sizes the top nav for 6 short labels (24px type, 40px side
    margins) and already wrapped to a second line once "Bayilik" was added.
@@ -645,6 +682,24 @@ button.theme-btn{ cursor:pointer; font-family:var(--text-font); }
   .tor-page-hero{ padding:150px 0px 60px; }
   .tor-page-hero h1{ font-size:36px; line-height:46px; }
   .tor-page-hero p{ font-size:17px; line-height:30px; }
+}
+
+/* ---------- thank-you.html (Web3Forms redirect target) ---------- */
+.tor-thanks{ padding-bottom:60px; }
+.tor-thanks-inner{ max-width:900px; margin:0 auto; text-align:center; }
+.tor-thanks-check{
+  width:96px; height:96px; margin:0 auto 34px;
+  display:flex; align-items:center; justify-content:center;
+  border-radius:50%;
+  background:var(--theme-color);
+  color:#fff;
+  font-size:38px;
+  box-shadow:0 18px 40px rgba(255,106,0,.30);
+}
+.tor-thanks .tor-contact-row{ margin-bottom:44px; text-align:center; }
+.tor-thanks-actions{ justify-content:center; }
+@media only screen and (max-width:991px){
+  .tor-thanks-check{ width:74px; height:74px; font-size:28px; margin-bottom:26px; }
 }
 
 /* ---------- section headings for the new pages ---------- */
