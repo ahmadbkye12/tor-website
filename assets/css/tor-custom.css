@@ -559,6 +559,17 @@
   .tor-section{ padding:70px 0px; }
 }
 
+/* ---------- EKOS page: "EKOS'un Kullanıldığı Alanlar." heading ----------
+   The clients section sits on #141414 but `.sec-title h2` inherits
+   --title-color (#0A0A0A), so the heading was almost invisible — and
+   `.sec-title h2 span` drops the second line to opacity .4 on top of that.
+   Render the whole heading in TOR orange at full opacity. */
+.clients-section .sec-title h2,
+.clients-section .sec-title h2 span{
+  color:var(--theme-color);
+  opacity:1;
+}
+
 /* =====================================================================
    SECTOR MARQUEE (.clients-list.tor-sector-marquee)
    The template's clients rows were stock brand logos (Microsoft, Instagram,
