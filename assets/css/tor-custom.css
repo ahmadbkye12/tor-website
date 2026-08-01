@@ -1003,6 +1003,115 @@ button.theme-btn{ cursor:pointer; font-family:var(--text-font); }
   cursor:pointer;
 }
 .tor-consent input{ margin-top:6px; flex-shrink:0; }
+.tor-consent label .req{ color:var(--theme-color); }
+
+/* the two consent texts sit in a collapsed panel under each checkbox.
+   `<details>` is a sibling of the label, never inside it — nesting it would
+   make clicking the summary toggle the checkbox. */
+.tor-legal{ margin:8px 0 0 30px; }
+.tor-legal > summary{
+  display:inline-block;
+  cursor:pointer;
+  font-family:var(--title-font);
+  font-size:14px;
+  font-weight:600;
+  color:var(--theme-color);
+  list-style:none;
+  padding:4px 0;
+  border-bottom:1px solid rgba(255,106,0,.35);
+}
+.tor-legal > summary::-webkit-details-marker{ display:none; }
+.tor-legal > summary:before{
+  content:'\f0fe';                /* plus-square */
+  font-family:'Font Awesome 5 Free';
+  font-weight:900;
+  margin-right:8px;
+}
+.tor-legal[open] > summary:before{ content:'\f146'; }   /* minus-square */
+/* The page runs Lenis smooth scroll, which swallows wheel events globally, so a
+   nested overflow box never scrolled — the page moved instead. The panel carries
+   `data-lenis-prevent` in the markup (Lenis then leaves its wheel events alone),
+   and overscroll-behavior stops the page taking over once the panel hits its end. */
+.tor-legal-body{
+  max-height:340px;
+  overflow-y:auto;
+  overscroll-behavior:contain;
+  -webkit-overflow-scrolling:touch;
+  margin-top:16px;
+  padding:24px 26px;
+  background:#F8F7F8;
+  border:1px solid rgba(0,0,0,.08);
+  border-radius:14px;
+}
+.tor-legal-body h4{
+  font-family:var(--title-font);
+  font-size:18px;
+  line-height:28px;
+  font-weight:700;
+  color:var(--title-color);
+  margin-bottom:16px;
+}
+.tor-legal-body h5{
+  font-family:var(--title-font);
+  font-size:15px;
+  font-weight:700;
+  color:var(--title-color);
+  margin-bottom:10px;
+}
+.tor-legal-body p{
+  font-size:15px;
+  line-height:26px;
+  color:var(--text-color);
+  margin-bottom:14px;
+}
+.tor-legal-body p:last-child{ margin-bottom:0; }
+.tor-legal-body strong{ color:var(--title-color); font-weight:700; }
+.tor-legal-body a{ color:var(--theme-color); }
+.tor-legal-controller{
+  margin-top:20px;
+  padding-top:18px;
+  border-top:1px solid rgba(0,0,0,.10);
+}
+.dark_bg .tor-legal-body{ background:rgba(255,255,255,.05); border-color:rgba(255,255,255,.12); }
+.dark_bg .tor-legal-body h4,
+.dark_bg .tor-legal-body h5,
+.dark_bg .tor-legal-body strong{ color:#fff; }
+.dark_bg .tor-legal-body p{ color:rgba(255,255,255,.72); }
+.dark_bg .tor-legal-controller{ border-color:rgba(255,255,255,.14); }
+@media only screen and (max-width:575px){
+  .tor-legal{ margin-left:0; }
+  .tor-legal-body{ padding:18px 16px; max-height:280px; }
+}
+
+/* unchecked-consent warning (shown by the guard script in partner.html) */
+.tor-consent li.is-missing > label{
+  color:var(--theme-color);
+}
+.tor-consent li.is-missing > label input{
+  outline:2px solid var(--theme-color);
+  outline-offset:3px;
+}
+.tor-consent-error{
+  display:none;
+  align-items:center;
+  gap:10px;
+  font-size:16px;
+  line-height:26px;
+  color:var(--theme-color);
+  font-weight:600;
+  background:rgba(255,106,0,.08);
+  border:1px solid rgba(255,106,0,.30);
+  border-radius:12px;
+  padding:14px 18px;
+  margin:0 0 24px;
+}
+.tor-consent-error.is-visible{ display:flex; }
+.tor-consent-error:before{
+  content:'\f06a';                /* exclamation-circle */
+  font-family:'Font Awesome 5 Free';
+  font-weight:900;
+  flex-shrink:0;
+}
 .tor-form-note{ font-size:15px; line-height:26px; color:var(--text-color); margin:22px 0 0; }
 .dark_bg .tor-form{ background:rgba(255,255,255,.04); border-color:rgba(255,255,255,.12); }
 .dark_bg .tor-form legend{ color:#fff; border-color:rgba(255,255,255,.12); }

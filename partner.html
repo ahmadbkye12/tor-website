@@ -472,7 +472,7 @@
                 <div class="row clearfix">
                     <div class="col-lg-10 col-md-12 col-sm-12">
                         <div class="tor-form">
-                            <form action="https://api.web3forms.com/submit" method="POST" id="partner-form" novalidate="novalidate">
+                            <form action="https://api.web3forms.com/submit" method="POST" id="partner-form">
                                 <input type="hidden" name="access_key" value="66821c91-d701-4117-aa21-ff60b7ae3408">
                                 <input type="hidden" name="subject" value="TOR Partner (Bayilik) Başvurusu – torenerji.com">
                                 <input type="hidden" name="from_name" value="TOR Enerji Web Sitesi">
@@ -595,17 +595,58 @@
                                 <ul class="tor-consent">
                                     <li>
                                         <label>
-                                            <input type="checkbox" name="onay-basvuru" required>
-                                            <span>TOR Partner Programı kapsamında başvuru bilgilerimin değerlendirilmesini kabul ediyorum.</span>
+                                            <input type="checkbox" name="onay-basvuru" value="Onaylandı" required>
+                                            <span>TOR Partner Programı kapsamında başvuru bilgilerimin değerlendirilmesini kabul ediyorum. <span class="req">*</span></span>
                                         </label>
+                                        <details class="tor-legal">
+                                            <summary>Onay metnini okuyun</summary>
+                                            <div class="tor-legal-body" data-lenis-prevent>
+                                                <h4>TOR Partner Programı Başvuru Bilgilerinin Değerlendirilmesine İlişkin Onay Metni</h4>
+                                                <p><strong>TOR GRUP ENERJİ SAN. TİC. LTD. ŞTİ.</strong> tarafından yürütülen <strong>TOR Partner Programı</strong> kapsamında tarafımdan paylaşılan kişisel, kurumsal, ticari ve iletişim bilgilerinin; bayilik/partnerlik başvurumun alınması, değerlendirilmesi, başvuru uygunluğunun belirlenmesi, tarafımla iletişime geçilmesi, gerekli görülmesi hâlinde ek bilgi ve belge talep edilmesi, ön görüşme ve değerlendirme süreçlerinin yürütülmesi, TOR Partner Programı kapsamındaki iş birliği olanaklarının değerlendirilmesi ve başvuru sonucunun tarafıma bildirilmesi amaçlarıyla incelenmesini kabul ediyorum.</p>
+                                                <p>Başvuru formunda verdiğim bilgilerin doğru, güncel ve eksiksiz olduğunu; başvuru sırasında paylaştığım kişi, şirket ve iletişim bilgilerinin tarafıma veya yetkili olduğum kuruluşa ait olduğunu; gerekli hâllerde bu bilgilerin doğruluğunu teyit etmek amacıyla benimle iletişime geçilebileceğini kabul ve beyan ederim.</p>
+                                                <p>TOR Partner Programı başvurusunun değerlendirmeye alınmasının; tek başına bayilik, partnerlik, temsilcilik, distribütörlük veya herhangi bir ticari iş birliği hakkı doğurmadığını, başvurunun kabul edilmesinin TOR GRUP ENERJİ SAN. TİC. LTD. ŞTİ.'nin değerlendirme kriterleri, ticari uygunluk şartları, bölgesel planlamaları ve gerekli görülen diğer koşullara bağlı olduğunu kabul ederim.</p>
+                                                <p>Başvurumun olumlu sonuçlanması hâlinde tarafıma sunulacak sözleşme, şartname, ticari koşullar ve program yükümlülüklerini ayrıca inceleyeceğimi; nihai iş birliğinin ancak taraflar arasında yazılı bir sözleşme veya yetkili onay sürecinin tamamlanmasıyla yürürlüğe gireceğini kabul ederim.</p>
+                                                <p>İşbu onay, TOR Partner Programı başvurumun değerlendirilmesine yönelik olup, tarafıma ticari ileti gönderilmesine ilişkin tercihlerimden bağımsızdır.</p>
+                                            </div>
+                                        </details>
                                     </li>
                                     <li>
                                         <label>
-                                            <input type="checkbox" name="onay-kvkk" required>
-                                            <span>Kişisel verilerimin ilgili mevzuat kapsamında işlenmesine ilişkin aydınlatma metnini okudum.</span>
+                                            <input type="checkbox" name="onay-kvkk" value="Onaylandı" required>
+                                            <span>Kişisel verilerimin ilgili mevzuat kapsamında işlenmesine ilişkin aydınlatma metnini okudum. <span class="req">*</span></span>
                                         </label>
+                                        <details class="tor-legal">
+                                            <summary>Aydınlatma metnini okuyun</summary>
+                                            <div class="tor-legal-body" data-lenis-prevent>
+                                                <h4>Kişisel Verilerin İşlenmesine İlişkin Aydınlatma Metni ve Onay</h4>
+                                                <p>6698 sayılı <strong>Kişisel Verilerin Korunması Kanunu (“KVKK”)</strong> kapsamında, TOR Partner Programı başvuru formu aracılığıyla paylaştığım ad, soyad, telefon numarası, e-posta adresi, şirket unvanı, faaliyet alanı, il/ilçe bilgisi, ticari deneyim, başvuru kapsamında ilettiğim diğer bilgiler ile gerekli hâllerde başvuru sürecinde sonradan paylaşabileceğim kişisel verilerin; başvurumun alınması ve değerlendirilmesi, benimle iletişime geçilmesi, uygun partnerlik modelinin belirlenmesi, başvuru sürecinin yürütülmesi, teklif ve iş birliği görüşmelerinin gerçekleştirilmesi, yasal yükümlülüklerin yerine getirilmesi, bilgi güvenliğinin sağlanması ve olası uyuşmazlıklarda hukuki süreçlerin yürütülmesi amaçlarıyla işlenebileceği konusunda bilgilendirildiğimi kabul ederim.</p>
+                                                <p>Kişisel verilerimin, başvuru sürecinin yürütülmesi için gerekli olduğu ölçüde TOR GRUP ENERJİ SAN. TİC. LTD. ŞTİ. bünyesindeki yetkili personel, ilgili departmanlar, bilgi teknolojileri ve teknik hizmet sağlayıcıları ile mevzuat kapsamında yetkili kamu kurum ve kuruluşlarıyla paylaşılabileceği; bu paylaşımların yalnızca ilgili amaç, hukuki sebep ve gerekli kapsamla sınırlı olarak gerçekleştirileceği konusunda bilgilendirildim.</p>
+                                                <p>Kişisel verilerimin, ilgili mevzuatta öngörülen saklama süreleri boyunca veya işleme amacının gerektirdiği süre kadar güvenli şekilde muhafaza edilebileceğini; başvurumun sonuçlanması, ticari ilişkinin kurulması veya yasal yükümlülüklerin yerine getirilmesi için gerekli olmayan verilerin ilgili saklama ve imha politikaları çerçevesinde silinebileceğini, yok edilebileceğini veya anonim hâle getirilebileceğini kabul ederim.</p>
+                                                <p>KVKK'nın 11. maddesi kapsamında; kişisel verilerimin işlenip işlenmediğini öğrenme, işlenmişse buna ilişkin bilgi talep etme, işlenme amacını ve amacına uygun kullanılıp kullanılmadığını öğrenme, yurt içinde veya yurt dışında aktarıldığı üçüncü kişileri bilme, eksik veya yanlış işlenmiş olması hâlinde düzeltilmesini isteme, ilgili şartların oluşması hâlinde silinmesini veya yok edilmesini talep etme, yapılan işlemlerin verilerin aktarıldığı üçüncü kişilere bildirilmesini isteme, işlenen verilerin münhasıran otomatik sistemler aracılığıyla analiz edilmesi sonucunda aleyhime bir sonucun ortaya çıkmasına itiraz etme ve kanuna aykırı işleme nedeniyle zarara uğramam hâlinde zararın giderilmesini talep etme haklarım bulunduğu konusunda bilgilendirildim.</p>
+                                                <p>Kişisel verilerimin işlenmesine ilişkin aydınlatma metnini okuduğumu, anladığımı ve tarafıma gerekli bilgilendirmenin yapıldığını kabul ederim. Kişisel verilerimin işlenmesine ilişkin haklarımı kullanmak veya konu hakkında bilgi almak amacıyla aşağıdaki iletişim kanallarından TOR GRUP ENERJİ SAN. TİC. LTD. ŞTİ. ile iletişime geçebileceğimi biliyorum.</p>
+                                                <div class="tor-legal-controller">
+                                                    <h5>Veri Sorumlusu</h5>
+                                                    <p>
+                                                        <strong>TOR GRUP ENERJİ SAN. TİC. LTD. ŞTİ.</strong><br>
+                                                        Kamberiye Mahallesi 861. Sokak No: 1/11<br>
+                                                        Haliliye / Şanlıurfa
+                                                    </p>
+                                                    <p>
+                                                        Topçumeydanı Vergi Dairesi<br>
+                                                        VKN: 855 095 15 55
+                                                    </p>
+                                                    <p>
+                                                        Web: <a href="https://www.torenerji.com" target="_blank" rel="noopener">www.torenerji.com</a><br>
+                                                        <a href="mailto:info@torenerji.com">info@torenerji.com</a><br>
+                                                        Telefon: <a href="tel:08502422030">+90 (850) 242 20 30</a>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </details>
                                     </li>
                                 </ul>
+
+                                <p class="tor-consent-error" id="consent-error" role="alert">Başvuruyu gönderebilmek için her iki onay metnini de işaretlemeniz gerekmektedir.</p>
 
                                 <button class="theme-btn" type="submit" name="submit-form"><span>TOR Partner Başvurusunu Gönder</span></button>
                                 <p class="tor-form-note">Başvurunuz başarıyla alındığında, TOR Partner ekibimiz başvurunuzu değerlendirdikten sonra sizinle iletişime geçecektir. Dilerseniz bayilik hattımızdan da bize ulaşabilirsiniz: <a class="tor-orange-text" href="tel:05462020606">0 546 202 06 06</a></p>
@@ -698,6 +739,48 @@
 
     <!-- main-js -->
     <script src="assets/js/script.js"></script>
+
+    <!-- bayilik formu: onay metinleri işaretlenmeden gönderim engellenir -->
+    <script>
+    (function () {
+        var form = document.getElementById('partner-form');
+        var error = document.getElementById('consent-error');
+        if (!form || !error) return;
+
+        var consents = form.querySelectorAll('.tor-consent input[type="checkbox"]');
+
+        function allChecked() {
+            for (var i = 0; i < consents.length; i++) {
+                if (!consents[i].checked) return false;
+            }
+            return true;
+        }
+
+        form.addEventListener('submit', function (e) {
+            if (allChecked()) return;
+            e.preventDefault();
+            error.classList.add('is-visible');
+            for (var i = 0; i < consents.length; i++) {
+                if (!consents[i].checked) {
+                    consents[i].closest('li').classList.add('is-missing');
+                }
+            }
+            var first = form.querySelector('.tor-consent .is-missing input[type="checkbox"]');
+            if (first) {
+                first.focus();
+                first.scrollIntoView({ block: 'center' });
+            }
+        });
+
+        // clear the warning as soon as the boxes are put right
+        Array.prototype.forEach.call(consents, function (box) {
+            box.addEventListener('change', function () {
+                box.closest('li').classList.toggle('is-missing', !box.checked);
+                if (allChecked()) error.classList.remove('is-visible');
+            });
+        });
+    })();
+    </script>
 
 </body><!-- End of .page_wrapper -->
 </html>
