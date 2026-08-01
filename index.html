@@ -99,6 +99,12 @@
                                     <li><a href="about.html">Hakkımızda</a></li>
                                     <li><a href="service.html">EKOS</a></li>
                                     <li><a href="portfolio.html">Referanslar</a></li>
+                                    <li class="dropdown"><a href="partner.html">Bayilik</a>
+                                        <ul>
+                                            <li><a href="partner.html">Bayilik ve Partner Programı</a></li>
+                                            <li><a href="dealers.html">Yetkili Bayilerimiz</a></li>
+                                        </ul>
+                                    </li>
                                     <li><a href="blog.html">Haberler</a></li>
                                     <li><a href="contact.html">İletişim</a></li>
                                 </ul>
@@ -186,7 +192,8 @@
             <div class="pattern-layer" style="background-image: url(assets/images/shape/shape-2.png);"></div>
             <div class="shape parallax-scene parallax-scene-2 anim-icons">
                 <div data-depth="0.40" class="shape-1" style="background-image: url(assets/images/shape/shape-4.png);"></div>
-                <div data-depth="0.50" class="shape-2" style="background-image: url(assets/images/shape/shape-5.jpg);"></div>
+                <!-- .shape-2 kaldırıldı: shape-5.jpg neredeyse tamamen siyah 1800x4395 bir görsel olduğu için
+                     88x97'lik kutuya kırpıldığında banner'ın sağ üstünde siyah bir kare olarak görünüyordu. -->
                 <div class="shape-3" style="background-image: url(assets/images/shape/shape-6.png);"></div>
                 <div data-depth="0.60" class="shape-4" style="background-image: url(assets/images/shape/shape-9.png);"></div>
             </div>
@@ -194,11 +201,15 @@
             <div class="outer-container">
                 <div class="content-box">
                     <h3>EKOS – Enerji Kalite <span>Optimizasyon Sistemi</span><img src="assets/images/icons/icon-1.png" alt=""></h3>
-                    <h2><span class="light-text">Enerji faturalarınızda</span><br><span class="color-text animation_text_word"></span></h2>
+                    <h2><span class="light-text">Elektrikte</span><br><span class="color-text animation_text_word"></span></h2>
                     <div class="lower-box">
                         <div class="inner-box">
                             <div class="form-inner">
-                                <form method="post" action="contact.html">
+                                <form action="https://api.web3forms.com/submit" method="POST">
+                                    <input type="hidden" name="access_key" value="66821c91-d701-4117-aa21-ff60b7ae3408">
+                                    <input type="hidden" name="subject" value="Ücretsiz Keşif Talebi – torenerji.com">
+                                    <input type="hidden" name="from_name" value="TOR Enerji Web Sitesi">
+                                    <input type="checkbox" name="botcheck" style="display:none;" tabindex="-1" aria-hidden="true">
                                     <div class="form-group">
                                         <div class="dark-shape" style="background-image: url(assets/images/shape/shape-3.png);"></div>
                                         <div class="light-shape" style="background-image: url(assets/images/shape/shape-8.png);"></div>
@@ -319,7 +330,7 @@
                                 <p>Güç faktörünü 0,99 seviyesine çıkararak reaktif ceza riskini ortadan kaldırır.</p>
                                 <div class="link"><a href="service.html"><i class="icon-10"></i></a></div>
                             </div>
-                            <figure class="image-box"><img src="assets/images/portfolio/portfolio-1.png" alt=""></figure>
+                            <figure class="image-box"><img src="assets/images/portfolio/portfolio-12.png" alt="EKOS ile güç faktörü optimizasyonu"></figure>
                         </div>
                     </div>
                     <div class="portfolio-block-one">
@@ -334,7 +345,7 @@
                                 <p>Enerji kayıp ve kaçaklarını önleyerek işletme genelinde verim sağlar.</p>
                                 <div class="link"><a href="service.html"><i class="icon-10"></i></a></div>
                             </div>
-                            <figure class="image-box"><img src="assets/images/portfolio/portfolio-1.png" alt=""></figure>
+                            <figure class="image-box"><img src="assets/images/portfolio/portfolio-10.png" alt="EKOS ile enerji kaçaklarının önlenmesi"></figure>
                         </div>
                     </div>
                 </div>
@@ -513,7 +524,7 @@
                 <div class="single-item-carousel owl-carousel owl-theme dots-style-one nav-style-one">
                     <div class="testimonial-block">
                         <div class="image-box">
-                            <figure class="image"><img src="assets/images/resource/testimonial-1.jpg" alt=""></figure>
+                            <figure class="image"><img src="assets/images/resource/ekos-montaj.png" alt=""></figure>
                             <div class="icon-box"><i class="icon-2"></i></div>
                         </div>
                         <div class="content-box">
@@ -526,7 +537,7 @@
                     </div>
                     <div class="testimonial-block">
                         <div class="image-box">
-                            <figure class="image"><img src="assets/images/resource/testimonial-1.jpg" alt=""></figure>
+                            <figure class="image"><img src="assets/images/resource/ekos-montaj.png" alt=""></figure>
                             <div class="icon-box"><i class="icon-2"></i></div>
                         </div>
                         <div class="content-box">
@@ -539,7 +550,7 @@
                     </div>
                     <div class="testimonial-block">
                         <div class="image-box">
-                            <figure class="image"><img src="assets/images/resource/testimonial-1.jpg" alt=""></figure>
+                            <figure class="image"><img src="assets/images/resource/ekos-montaj.png" alt=""></figure>
                             <div class="icon-box"><i class="icon-2"></i></div>
                         </div>
                         <div class="content-box">

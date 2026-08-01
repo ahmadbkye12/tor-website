@@ -481,6 +481,578 @@
   }
 }
 
+/* =====================================================================
+   TOR SPLIT BLOCK — long-form copy beside an illustration
+   Used by service.html ("EKOS Ürün Serisi", "Nerede Kullanılır?"),
+   partner.html and dealers.html. `.reverse` puts the image on the left.
+   ===================================================================== */
+.tor-split{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  gap:40px 70px;
+}
+.tor-split.reverse{ flex-direction:row-reverse; }
+.tor-split-text{ flex:1 1 480px; min-width:0; }
+.tor-split-media{ flex:1 1 380px; min-width:0; text-align:center; }
+.tor-split-media img{
+  max-width:100%;
+  height:auto;
+  display:inline-block;
+}
+.tor-split-media.framed img{
+  border-radius:24px;
+  background:#F5F4F5;
+}
+.tor-split-media.circle img{ border-radius:50%; }
+.tor-split-text .num{
+  display:block;
+  font-family:var(--title-font);
+  font-size:14px;
+  font-weight:600;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  color:var(--theme-color);
+  margin-bottom:16px;
+}
+.tor-split-text h2{
+  font-family:var(--title-font);
+  font-size:46px;
+  line-height:58px;
+  font-weight:700;
+  color:var(--title-color);
+  margin-bottom:26px;
+}
+.tor-split-text h2 span{ color:var(--theme-color); }
+.tor-split-text p{
+  font-size:19px;
+  line-height:34px;
+  color:var(--text-color);
+  margin-bottom:24px;
+}
+.tor-split-text p:last-child{ margin-bottom:0; }
+.tor-split-text strong{ color:var(--title-color); font-weight:700; }
+.dark_bg .tor-split-text h2{ color:#fff; }
+.dark_bg .tor-split-text p{ color:rgba(255,255,255,.75); }
+.dark_bg .tor-split-text strong{ color:#fff; }
+.dark_bg .tor-split-media.framed img{ background:rgba(255,255,255,.05); }
+
+@media only screen and (max-width:1199px){
+  .tor-split-text h2{ font-size:38px; line-height:48px; }
+}
+@media only screen and (max-width:991px){
+  .tor-split{ gap:34px; }
+  .tor-split.reverse{ flex-direction:column; }
+  .tor-split-text,
+  .tor-split-media{ flex-basis:100%; }
+  .tor-split-text h2{ font-size:30px; line-height:40px; margin-bottom:20px; }
+  .tor-split-text p{ font-size:17px; line-height:30px; margin-bottom:18px; }
+  .tor-split-media img{ max-width:min(88vw, 460px); }
+}
+
+/* generic section wrapper used by the new long-form blocks */
+.tor-section{ padding:120px 0px; }
+.tor-section.pt_0{ padding-top:0px; }
+.tor-section.band{ background:#F8F7F8; }
+.dark_bg .tor-section.band{ background:rgba(255,255,255,.03); }
+@media only screen and (max-width:991px){
+  .tor-section{ padding:70px 0px; }
+}
+
+/* ---------- 7-item main menu ----------
+   The template sizes the top nav for 6 short labels (24px type, 40px side
+   margins) and already wrapped to a second line once "Bayilik" was added.
+   The two dealer pages sit in a "Bayilik" dropdown so the bar stays at seven
+   items; these rules trim type and spacing so it fits on one line across the
+   desktop range (responsive.css hides .main-menu below 1201px and drops the
+   margins to 30px under 1600px — restated here because this file loads last). */
+@media only screen and (min-width:1201px){
+  .main-menu .navigation > li{ margin:0px 26px; }
+  .main-menu .navigation > li > a{ font-size:20px; line-height:30px; }
+}
+@media only screen and (min-width:1201px) and (max-width:1599px){
+  .main-menu .navigation > li{ margin:0px 16px; }
+  .main-menu .navigation > li > a{ font-size:18px; line-height:28px; }
+}
+@media only screen and (min-width:1201px) and (max-width:1399px){
+  .main-menu .navigation > li{ margin:0px 11px; }
+  .main-menu .navigation > li > a{ font-size:16px; line-height:26px; }
+  .main-header .btn-box a{ font-size:16px; }
+}
+/* never let the bar wrap — if it ever gets too tight it scrolls instead */
+.main-menu .navigation{
+  display:flex;
+  flex-wrap:nowrap;
+  align-items:center;
+}
+.main-menu .navigation > li{ float:none; flex-shrink:0; }
+.main-menu .navigation > li > a{ white-space:nowrap; }
+/* the dropdown panel keeps the template's own styling, just widened for the labels */
+.main-menu .navigation > li.dropdown > ul{ min-width:270px; }
+
+/* =====================================================================
+   PARTNER PROGRAM (partner.html) + AUTHORISED DEALERS (dealers.html)
+   The template has no dealer/partner module, so these pages are built
+   from a small set of TOR-branded primitives defined here.
+   ===================================================================== */
+
+/* ---------- buttons ---------- */
+button.theme-btn{ cursor:pointer; font-family:var(--text-font); }
+.theme-btn.outline{
+  background:transparent;
+  color:var(--title-color);
+  border-color:rgba(0,0,0,.18);
+}
+.theme-btn.outline:hover{
+  background:var(--theme-color);
+  border-color:var(--theme-color);
+  color:#fff;
+}
+.dark_bg .theme-btn.outline{ color:#fff; border-color:rgba(255,255,255,.28); }
+.tor-btn-row{ display:flex; flex-wrap:wrap; gap:16px; margin-top:38px; }
+
+/* ---------- page hero (partner + dealers) ---------- */
+.tor-page-hero{ padding:200px 0px 110px; }
+/* the eyebrow label is used both inside .tor-split-text (partner.html) and
+   directly in the hero column (dealers.html), so style it at hero level too */
+.tor-page-hero .num{
+  display:block;
+  font-family:var(--title-font);
+  font-size:14px;
+  font-weight:600;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  color:var(--theme-color);
+  margin-bottom:16px;
+}
+.tor-page-hero h1{
+  font-family:var(--title-font);
+  font-size:66px;
+  line-height:76px;
+  font-weight:700;
+  color:var(--title-color);
+  margin-bottom:26px;
+}
+.tor-page-hero h1 span{ color:var(--theme-color); }
+.tor-page-hero p{ font-size:20px; line-height:36px; color:var(--text-color); margin:0; }
+.dark_bg .tor-page-hero h1{ color:#fff; }
+.dark_bg .tor-page-hero p{ color:rgba(255,255,255,.75); }
+
+@media only screen and (max-width:1199px){
+  .tor-page-hero h1{ font-size:50px; line-height:62px; }
+}
+@media only screen and (max-width:991px){
+  .tor-page-hero{ padding:150px 0px 60px; }
+  .tor-page-hero h1{ font-size:36px; line-height:46px; }
+  .tor-page-hero p{ font-size:17px; line-height:30px; }
+}
+
+/* ---------- section headings for the new pages ---------- */
+.tor-sec-head{ max-width:840px; margin:0 0 60px; }
+.tor-sec-head.centred{ margin-left:auto; margin-right:auto; text-align:center; }
+.tor-sec-head .num{
+  display:block;
+  font-family:var(--title-font);
+  font-size:14px;
+  font-weight:600;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  color:var(--theme-color);
+  margin-bottom:16px;
+}
+.tor-sec-head h2{
+  font-family:var(--title-font);
+  font-size:46px;
+  line-height:58px;
+  font-weight:700;
+  color:var(--title-color);
+  margin:0;
+}
+.tor-sec-head h2 span{ color:var(--theme-color); }
+.tor-sec-head p{ font-size:19px; line-height:34px; color:var(--text-color); margin:22px 0 0; }
+.dark_bg .tor-sec-head h2{ color:#fff; }
+.dark_bg .tor-sec-head p{ color:rgba(255,255,255,.75); }
+@media only screen and (max-width:991px){
+  .tor-sec-head{ margin-bottom:38px; }
+  .tor-sec-head h2{ font-size:30px; line-height:40px; }
+  .tor-sec-head p{ font-size:17px; line-height:30px; }
+}
+
+/* ---------- card grid ---------- */
+.tor-grid{ display:grid; gap:26px; grid-template-columns:repeat(3, minmax(0, 1fr)); }
+.tor-grid.cols-2{ grid-template-columns:repeat(2, minmax(0, 1fr)); }
+@media only screen and (max-width:1199px){
+  .tor-grid{ grid-template-columns:repeat(2, minmax(0, 1fr)); }
+}
+@media only screen and (max-width:767px){
+  .tor-grid,
+  .tor-grid.cols-2{ grid-template-columns:1fr; }
+}
+
+.tor-card{
+  background:#fff;
+  border:1px solid rgba(0,0,0,.08);
+  border-radius:20px;
+  padding:38px 34px;
+  transition:.35s ease;
+}
+.tor-card:hover{ transform:translateY(-6px); box-shadow:0 22px 44px rgba(0,0,0,.08); border-color:rgba(255,106,0,.35); }
+.tor-card .ic{
+  width:58px; height:58px; margin-bottom:24px;
+  display:flex; align-items:center; justify-content:center;
+  border-radius:14px;
+  background:rgba(255,106,0,.10);
+  color:var(--theme-color);
+  font-size:22px;
+}
+.tor-card h3{
+  font-family:var(--title-font);
+  font-size:24px;
+  line-height:32px;
+  font-weight:700;
+  color:var(--title-color);
+  margin-bottom:14px;
+}
+.tor-card p{ font-size:17px; line-height:30px; color:var(--text-color); margin:0; }
+.dark_bg .tor-card{ background:rgba(255,255,255,.05); border-color:rgba(255,255,255,.12); }
+.dark_bg .tor-card h3{ color:#fff; }
+.dark_bg .tor-card p{ color:rgba(255,255,255,.7); }
+
+/* ---------- numbered process steps ---------- */
+.tor-steps{ counter-reset:torstep; margin:0; padding:0; list-style:none; }
+.tor-steps li{
+  counter-increment:torstep;
+  position:relative;
+  padding:0 0 34px 84px;
+  border-left:1px solid rgba(0,0,0,.10);
+  margin-left:27px;
+}
+.tor-steps li:last-child{ border-left-color:transparent; padding-bottom:0; }
+.tor-steps li:before{
+  content:counter(torstep);
+  position:absolute;
+  left:-28px;
+  top:-4px;
+  width:56px; height:56px;
+  border-radius:50%;
+  background:var(--theme-color);
+  color:#fff;
+  font-family:var(--title-font);
+  font-size:20px;
+  font-weight:700;
+  display:flex; align-items:center; justify-content:center;
+}
+.tor-steps li h3{
+  font-family:var(--title-font);
+  font-size:24px;
+  line-height:32px;
+  font-weight:700;
+  color:var(--title-color);
+  margin:10px 0 10px;
+}
+.tor-steps li p{ font-size:17px; line-height:30px; color:var(--text-color); margin:0; }
+.dark_bg .tor-steps li{ border-left-color:rgba(255,255,255,.14); }
+.dark_bg .tor-steps li h3{ color:#fff; }
+.dark_bg .tor-steps li p{ color:rgba(255,255,255,.7); }
+@media only screen and (max-width:575px){
+  .tor-steps li{ padding-left:64px; margin-left:22px; }
+  .tor-steps li:before{ left:-23px; width:46px; height:46px; font-size:17px; }
+  .tor-steps li h3{ font-size:20px; line-height:28px; }
+}
+
+/* ---------- tick list (who can apply / level benefits) ---------- */
+.tor-check-list{ margin:0; padding:0; list-style:none; columns:2; column-gap:50px; }
+.tor-check-list.single{ columns:1; }
+.tor-check-list li{
+  position:relative;
+  padding:0 0 16px 34px;
+  font-size:17px;
+  line-height:30px;
+  color:var(--text-color);
+  break-inside:avoid;
+}
+.tor-check-list li:before{
+  position:absolute;
+  left:0; top:0;
+  content:'\f00c';
+  font-family:'Font Awesome 5 Free';
+  font-weight:900;
+  font-size:13px;
+  color:var(--theme-color);
+}
+.dark_bg .tor-check-list li{ color:rgba(255,255,255,.72); }
+@media only screen and (max-width:767px){
+  .tor-check-list{ columns:1; }
+}
+
+/* ---------- partnership levels ---------- */
+.tor-level{
+  position:relative;
+  background:#fff;
+  border:1px solid rgba(0,0,0,.08);
+  border-radius:24px;
+  padding:44px 36px;
+  height:100%;
+  transition:.35s ease;
+}
+.tor-level:hover{ transform:translateY(-6px); box-shadow:0 24px 48px rgba(0,0,0,.09); }
+.tor-level.featured{ border-color:var(--theme-color); box-shadow:0 18px 40px rgba(255,106,0,.14); }
+.tor-level .tier{
+  display:inline-block;
+  font-family:var(--title-font);
+  font-size:13px;
+  font-weight:700;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  color:var(--theme-color);
+  background:rgba(255,106,0,.10);
+  border-radius:40px;
+  padding:8px 18px;
+  margin-bottom:22px;
+}
+.tor-level h3{
+  font-family:var(--title-font);
+  font-size:30px;
+  line-height:40px;
+  font-weight:700;
+  color:var(--title-color);
+  margin-bottom:14px;
+}
+.tor-level > p{ font-size:17px; line-height:30px; color:var(--text-color); margin-bottom:26px; }
+.dark_bg .tor-level{ background:rgba(255,255,255,.05); border-color:rgba(255,255,255,.12); }
+.dark_bg .tor-level h3{ color:#fff; }
+.dark_bg .tor-level > p{ color:rgba(255,255,255,.7); }
+
+/* ---------- dark CTA band ---------- */
+.tor-cta-band{
+  background:var(--secondary-color);
+  border-radius:28px;
+  padding:70px 60px;
+  overflow:hidden;
+}
+.tor-cta-band h2{
+  font-family:var(--title-font);
+  font-size:42px;
+  line-height:54px;
+  font-weight:700;
+  color:#fff;
+  margin-bottom:18px;
+}
+.tor-cta-band h2 span{ color:var(--theme-color); }
+.tor-cta-band p{ font-size:18px; line-height:32px; color:rgba(255,255,255,.72); margin:0; }
+.tor-cta-band .theme-btn.outline{ color:#fff; border-color:rgba(255,255,255,.30); }
+@media only screen and (max-width:991px){
+  .tor-cta-band{ padding:44px 28px; }
+  .tor-cta-band h2{ font-size:28px; line-height:38px; }
+  .tor-cta-band p{ font-size:16px; line-height:28px; }
+}
+
+/* ---------- application form ---------- */
+.tor-form{
+  background:#fff;
+  border:1px solid rgba(0,0,0,.08);
+  border-radius:24px;
+  padding:56px 54px;
+}
+.tor-form fieldset{ border:0; padding:0; margin:0 0 44px; }
+.tor-form fieldset:last-of-type{ margin-bottom:34px; }
+.tor-form legend{
+  font-family:var(--title-font);
+  font-size:22px;
+  line-height:30px;
+  font-weight:700;
+  color:var(--title-color);
+  padding:0;
+  margin-bottom:26px;
+  width:100%;
+  border-bottom:1px solid rgba(0,0,0,.08);
+  padding-bottom:14px;
+}
+.tor-field-grid{ display:grid; gap:22px 26px; grid-template-columns:repeat(2, minmax(0, 1fr)); }
+.tor-field-grid .full{ grid-column:1 / -1; }
+@media only screen and (max-width:767px){
+  .tor-field-grid{ grid-template-columns:1fr; }
+  .tor-form{ padding:32px 22px; }
+}
+.tor-form label{
+  display:block;
+  font-family:var(--title-font);
+  font-size:15px;
+  font-weight:600;
+  color:var(--title-color);
+  margin-bottom:8px;
+}
+.tor-form label .req{ color:var(--theme-color); }
+.tor-form input[type='text'],
+.tor-form input[type='email'],
+.tor-form input[type='tel'],
+.tor-form input[type='url'],
+.tor-form input[type='number'],
+.tor-form select,
+.tor-form textarea{
+  width:100%;
+  background:#F8F7F8;
+  border:1px solid rgba(0,0,0,.10);
+  border-radius:12px;
+  padding:14px 18px;
+  font-family:var(--text-font);
+  font-size:16px;
+  color:var(--title-color);
+  transition:.3s ease;
+}
+.tor-form textarea{ min-height:120px; resize:vertical; }
+.tor-form input:focus,
+.tor-form select:focus,
+.tor-form textarea:focus{
+  outline:none;
+  border-color:var(--theme-color);
+  background:#fff;
+}
+.tor-radio-group{ display:flex; flex-wrap:wrap; gap:12px; }
+.tor-radio-group label{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  background:#F8F7F8;
+  border:1px solid rgba(0,0,0,.10);
+  border-radius:40px;
+  padding:12px 22px;
+  margin:0;
+  font-weight:600;
+  cursor:pointer;
+  transition:.3s ease;
+}
+.tor-radio-group label:hover{ border-color:var(--theme-color); }
+.tor-consent{ margin:0 0 30px; padding:0; list-style:none; }
+.tor-consent li{ margin-bottom:14px; }
+.tor-consent label{
+  display:flex;
+  gap:12px;
+  font-family:var(--text-font);
+  font-size:16px;
+  line-height:28px;
+  font-weight:400;
+  color:var(--text-color);
+  margin:0;
+  cursor:pointer;
+}
+.tor-consent input{ margin-top:6px; flex-shrink:0; }
+.tor-form-note{ font-size:15px; line-height:26px; color:var(--text-color); margin:22px 0 0; }
+.dark_bg .tor-form{ background:rgba(255,255,255,.04); border-color:rgba(255,255,255,.12); }
+.dark_bg .tor-form legend{ color:#fff; border-color:rgba(255,255,255,.12); }
+.dark_bg .tor-form label{ color:#fff; }
+.dark_bg .tor-form input,
+.dark_bg .tor-form select,
+.dark_bg .tor-form textarea,
+.dark_bg .tor-radio-group label{ background:rgba(255,255,255,.06); border-color:rgba(255,255,255,.14); color:#fff; }
+.dark_bg .tor-consent label,
+.dark_bg .tor-form-note{ color:rgba(255,255,255,.7); }
+
+/* ---------- dealer search bar ---------- */
+.tor-dealer-filter{
+  background:#fff;
+  border:1px solid rgba(0,0,0,.08);
+  border-radius:20px;
+  padding:30px 32px;
+  display:grid;
+  gap:20px 24px;
+  grid-template-columns:repeat(3, minmax(0, 1fr)) auto;
+  align-items:end;
+  margin-bottom:60px;
+}
+.tor-dealer-filter label{
+  display:block;
+  font-family:var(--title-font);
+  font-size:15px;
+  font-weight:600;
+  color:var(--title-color);
+  margin-bottom:8px;
+}
+.tor-dealer-filter select{
+  width:100%;
+  background:#F8F7F8;
+  border:1px solid rgba(0,0,0,.10);
+  border-radius:12px;
+  padding:14px 18px;
+  font-family:var(--text-font);
+  font-size:16px;
+  color:var(--title-color);
+}
+.tor-dealer-filter select:focus{ outline:none; border-color:var(--theme-color); background:#fff; }
+@media only screen and (max-width:1199px){
+  .tor-dealer-filter{ grid-template-columns:repeat(2, minmax(0, 1fr)); }
+  .tor-dealer-filter .filter-action{ grid-column:1 / -1; }
+}
+@media only screen and (max-width:575px){
+  .tor-dealer-filter{ grid-template-columns:1fr; padding:24px 20px; }
+}
+.dark_bg .tor-dealer-filter{ background:rgba(255,255,255,.05); border-color:rgba(255,255,255,.12); }
+.dark_bg .tor-dealer-filter label{ color:#fff; }
+.dark_bg .tor-dealer-filter select{ background:rgba(255,255,255,.06); border-color:rgba(255,255,255,.14); color:#fff; }
+
+/* ---------- dealer card ---------- */
+.tor-dealer-card{
+  background:#fff;
+  border:1px solid rgba(0,0,0,.08);
+  border-radius:20px;
+  padding:36px 32px;
+  display:flex;
+  flex-direction:column;
+  height:100%;
+  transition:.35s ease;
+}
+.tor-dealer-card:hover{ transform:translateY(-6px); box-shadow:0 22px 44px rgba(0,0,0,.08); }
+.tor-dealer-card .badge-row{ display:flex; flex-wrap:wrap; gap:10px; margin-bottom:20px; }
+.tor-dealer-badge{
+  font-family:var(--title-font);
+  font-size:12px;
+  font-weight:700;
+  letter-spacing:1.5px;
+  text-transform:uppercase;
+  border-radius:40px;
+  padding:7px 16px;
+}
+.tor-dealer-badge.silver{ background:#EDEDF0; color:#5A5A66; }
+.tor-dealer-badge.gold{ background:rgba(255,106,0,.12); color:var(--tor-orange-deep); }
+.tor-dealer-badge.platinum{ background:var(--secondary-color); color:#fff; }
+.tor-dealer-card h3{
+  font-family:var(--title-font);
+  font-size:24px;
+  line-height:32px;
+  font-weight:700;
+  color:var(--title-color);
+  margin-bottom:18px;
+}
+.tor-dealer-meta{ margin:0 0 22px; padding:0; list-style:none; }
+.tor-dealer-meta li{ font-size:16px; line-height:28px; color:var(--text-color); margin-bottom:6px; }
+.tor-dealer-meta li strong{ color:var(--title-color); font-weight:600; }
+.tor-dealer-contact{ margin:0 0 26px; padding:0; list-style:none; border-top:1px solid rgba(0,0,0,.08); padding-top:20px; }
+.tor-dealer-contact li{ display:flex; align-items:center; gap:12px; font-size:16px; line-height:28px; margin-bottom:8px; color:var(--text-color); }
+.tor-dealer-contact li i{ color:var(--theme-color); width:18px; text-align:center; }
+.tor-dealer-contact a{ color:var(--text-color); }
+.tor-dealer-contact a:hover{ color:var(--theme-color); }
+.tor-dealer-card .card-actions{ display:flex; flex-wrap:wrap; gap:12px; margin-top:auto; }
+.tor-dealer-card .card-actions .theme-btn{ font-size:16px; padding:11px 22px; }
+.dark_bg .tor-dealer-card{ background:rgba(255,255,255,.05); border-color:rgba(255,255,255,.12); }
+.dark_bg .tor-dealer-card h3{ color:#fff; }
+.dark_bg .tor-dealer-meta li,
+.dark_bg .tor-dealer-contact li,
+.dark_bg .tor-dealer-contact a{ color:rgba(255,255,255,.72); }
+.dark_bg .tor-dealer-meta li strong{ color:#fff; }
+.dark_bg .tor-dealer-contact{ border-color:rgba(255,255,255,.12); }
+
+/* shown by the filter script when nothing matches */
+.tor-no-result{
+  display:none;
+  text-align:center;
+  padding:60px 20px;
+  font-size:19px;
+  line-height:32px;
+  color:var(--text-color);
+}
+.tor-no-result.is-visible{ display:block; }
+.dark_bg .tor-no-result{ color:rgba(255,255,255,.7); }
+
 /* ---------- CTA labels stay on one line ----------
    The banner's .inner-box is a fixed 530px flex row shared by the button and the
    social links, so "Keşif Talep Et" wrapped onto two lines. Keep it nowrap and

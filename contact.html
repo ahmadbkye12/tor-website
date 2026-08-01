@@ -90,6 +90,12 @@
                                     <li><a href="about.html">Hakkımızda</a></li>
                                     <li><a href="service.html">EKOS</a></li>
                                     <li><a href="portfolio.html">Referanslar</a></li>
+                                    <li class="dropdown"><a href="partner.html">Bayilik</a>
+                                        <ul>
+                                            <li><a href="partner.html">Bayilik ve Partner Programı</a></li>
+                                            <li><a href="dealers.html">Yetkili Bayilerimiz</a></li>
+                                        </ul>
+                                    </li>
                                     <li><a href="blog.html">Haberler</a></li>
                                     <li class="current"><a href="contact.html">İletişim</a></li>
                                 </ul>
@@ -184,36 +190,42 @@
                         <a href="https://www.torenerji.com" target="_blank">www.torenerji.com</a>
                     </li>
                 </ul>
-                <!-- İletişim formu geçici olarak devre dışı bırakıldı; iletişim bilgileri yukarıda yer alıyor.
-                <div class="form-inner">
-                    <form method="post" action="sendemail.php" id="contact-form" class="default-form" novalidate="novalidate">
-                        <div class="row clearfix">
-                            <div class="col-lg-6 col-md-6 col-sm-12 form-group">
-                                <label>Ad Soyad / Firma*</label>
-                                <input type="text" name="username" placeholder="Adınız veya firmanız" required="" aria-required="true">
-                            </div>
-                            <div class="col-lg-6 col-md-6 col-sm-12 form-group">
-                                <label>E-posta*</label>
-                                <input type="email" name="email" placeholder="E-posta adresiniz" required="" aria-required="true">
-                            </div>
-                            <div class="col-lg-6 col-md-6 col-sm-12 form-group">
-                                <label>Telefon*</label>
-                                <input type="text" name="phone" required="" placeholder="Telefon numaranız" aria-required="true">
-                            </div>
-                            <div class="col-lg-6 col-md-6 col-sm-12 form-group">
-                                <label>Konu*</label>
-                                <input type="text" name="subject" required="" placeholder="Konu (ör. Ücretsiz Keşif)" aria-required="true">
-                            </div>
-                            <div class="col-lg-12 col-md-12 col-sm-12 form-group">
-                                <textarea name="message" placeholder="Mesajınız*"></textarea>
-                            </div>
-                            <div class="col-lg-12 col-md-12 col-sm-12 form-group message-btn">
-                                <button class="theme-btn-three" type="submit" name="submit-form">MESAJ GÖNDER<span></span><span></span><span></span> <span></span></button>
-                            </div>
+                <!-- İletişim formu Web3Forms üzerinden info@torenerji.com adresine iletilir. -->
+                <div class="row clearfix mb_70">
+                    <div class="col-lg-10 col-md-12 col-sm-12 mx-auto">
+                        <div class="tor-form">
+                            <form action="https://api.web3forms.com/submit" method="POST" id="contact-form" novalidate="novalidate">
+                                <input type="hidden" name="access_key" value="66821c91-d701-4117-aa21-ff60b7ae3408">
+                                <input type="hidden" name="subject" value="İletişim Formu – torenerji.com">
+                                <input type="hidden" name="from_name" value="TOR Enerji Web Sitesi">
+                                <input type="checkbox" name="botcheck" style="display:none;" tabindex="-1" aria-hidden="true">
+                                <div class="tor-field-grid">
+                                    <div>
+                                        <label for="c-name">Ad Soyad / Firma <span class="req">*</span></label>
+                                        <input type="text" id="c-name" name="name" placeholder="Adınız veya firmanız" required>
+                                    </div>
+                                    <div>
+                                        <label for="c-email">E-posta <span class="req">*</span></label>
+                                        <input type="email" id="c-email" name="email" placeholder="E-posta adresiniz" required>
+                                    </div>
+                                    <div>
+                                        <label for="c-phone">Telefon <span class="req">*</span></label>
+                                        <input type="tel" id="c-phone" name="telefon" placeholder="Telefon numaranız" required>
+                                    </div>
+                                    <div>
+                                        <label for="c-topic">Konu <span class="req">*</span></label>
+                                        <input type="text" id="c-topic" name="konu" placeholder="Konu (ör. Ücretsiz Keşif)" required>
+                                    </div>
+                                    <div class="full">
+                                        <label for="c-message">Mesajınız <span class="req">*</span></label>
+                                        <textarea id="c-message" name="message" placeholder="Mesajınız" required></textarea>
+                                    </div>
+                                </div>
+                                <button class="theme-btn mt_30" type="submit"><span>Mesaj Gönder</span></button>
+                            </form>
                         </div>
-                    </form>
+                    </div>
                 </div>
-                -->
                 <div class="tor-contact-note">
                     <p>Sorularınız, ücretsiz keşif talebiniz, sipariş ve bayilik başvurularınız için yukarıdaki telefon numaralarından veya <a href="mailto:info@torenerji.com">info@torenerji.com</a> adresinden bize doğrudan ulaşabilirsiniz. Uzman ekibimiz en kısa sürede size dönüş yapar.</p>
                     <div class="tor-contact-actions">
@@ -248,12 +260,18 @@
                                 <ul class="footer-menu mb_110">
                                     <li><a href="about.html">Hakkımızda</a></li>
                                     <li><a href="service.html">EKOS</a></li>
+                                    <li><a href="partner.html">Bayilik</a></li>
+                                    <li><a href="dealers.html">Yetkili Bayilerimiz</a></li>
                                     <li><a href="blog.html">Haberler</a></li>
                                     <li><a href="contact.html">İletişim</a></li>
                                 </ul>
                                 <div class="form-inner">
                                     <p>Bülten</p>
-                                    <form method="post" action="contact.html">
+                                    <form action="https://api.web3forms.com/submit" method="POST">
+                                        <input type="hidden" name="access_key" value="66821c91-d701-4117-aa21-ff60b7ae3408">
+                                        <input type="hidden" name="subject" value="Bülten Aboneliği – torenerji.com">
+                                        <input type="hidden" name="from_name" value="TOR Enerji Web Sitesi">
+                                        <input type="checkbox" name="botcheck" style="display:none;" tabindex="-1" aria-hidden="true">
                                         <div class="form-group">
                                             <input type="email" name="email" placeholder="E-posta adresiniz" required>
                                             <button type="submit"><i class="icon-34"></i></button>
